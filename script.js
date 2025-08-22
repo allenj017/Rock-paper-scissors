@@ -16,7 +16,26 @@ function getHumanChoice () {
     return userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
 }
 
-console.log(getHumanChoice())
+function playRound(humanChoice, computerChoice) {
+    console.log(`This is the human choice ${humanChoice}`);
+    console.log(`This is the computer choice ${computerChoice}`);
+    if (humanChoice === computerChoice) {
+        console.log(`Draw. You both selected ${humanChoice}`);
+    } else if (humanChoice == "Rock" && computerChoice == "Scissors") {
+        humanScore += 1;
+        console.log("You win! Rock beats Scissors")
+    } else if (humanChoice == "Paper" && computerChoice == "Rock") {
+        humanScore += 1;
+        console.log("You win! Paper beats Rock.");
+    } else if (humanChoice == "Scissors" && computerChoice == "Paper") {
+        humanScore += 1;
+        console.log("You win! Scissors beats Paper");
+    } else {
+        computerScore += 1;
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+    }
+}
 
 
 
+playRound(getHumanChoice(), getComputerChoice());

@@ -5,3 +5,13 @@ function getComputerChoice (values = ["Rock", "Paper", "Scissors"]) {
 }
 
 
+function getHumanChoice () {
+    let userInput = prompt("Enter your choice here: ");
+
+    return userInput;
+}
+
+console.log(getHumanChoice());
+
+
+

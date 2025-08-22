@@ -13,10 +13,10 @@ function getComputerChoice (values = ["Rock", "Paper", "Scissors"]) {
 function getHumanChoice () {
     let userInput = prompt("Enter your choice here: ");
 
-    return userInput;
+    return userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
 }
 
-console.log(getHumanChoice());
+console.log(getHumanChoice())
 
 
 

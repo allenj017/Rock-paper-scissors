@@ -1,7 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
-
 
 function getComputerChoice (values = ["Rock", "Paper", "Scissors"]) {
     let index = Math.floor(Math.random() * values.length);
@@ -16,9 +12,15 @@ function getHumanChoice () {
     return userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
 }
 
-function playRound(humanChoice, computerChoice) {
-    console.log(`This is the human choice ${humanChoice}`);
-    console.log(`This is the computer choice ${computerChoice}`);
+
+
+
+
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         console.log(`Draw. You both selected ${humanChoice}`);
     } else if (humanChoice == "Rock" && computerChoice == "Scissors") {
@@ -36,6 +38,21 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+    let roundCounter = 0;
+    while (roundCounter < 5) {
+        playRound(getHumanChoice(), getComputerChoice())
+        roundCounter += 1;
+    }
+
+    if (humanScore == computerScore) {
+        console.log("Tie")
+    } else if (humanScore > computerScore) {
+        console.log("You won!")
+    } else {
+        console.log("You lost!")
+    }
+
+}
 
 
-playRound(getHumanChoice(), getComputerChoice());
+playGame()
